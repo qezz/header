@@ -25,12 +25,12 @@ fn main() -> io::Result<()> {
     loop {
         let bytes_read = stdin.read_line(&mut buffer)?;
         if bytes_read == 0 {
-            break
+            break;
         }
 
         let res = io::stdout().write_all(buffer.as_bytes());
         if res.is_err() {
-            break
+            break;
         }
         buffer.clear();
     }
